@@ -27,6 +27,13 @@ app.get('/feedback', (req, res) =>
   res.sendFile(path.join(__dirname, '/public/pages/feedback.html'))
 );
 
+// GET Route for homepage
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '/public/images/notfound.jpg'));
+  console.log(`${req.body} This is a 404 page`);
+}
+);
+
 app.listen(PORT, () =>
   console.log(`App listening at http://localhost:${PORT} 🚀`)
 );
